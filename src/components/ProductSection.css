@@ -1,0 +1,22 @@
+#productSectionCarousel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    height: fit-content;
+    width: 60%;
+    margin: auto;
+}
+
+.productSectionCarouselItem{
+    margin: 0px 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #b6b6b655;
+}
+.productImgContainer{
+    width: 100%;
+}
+.productImg{
+    width: 100%;
+}

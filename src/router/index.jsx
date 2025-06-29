@@ -2,6 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home";
 import ProductDetail from "../pages/ProductDetail";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import Cart from "../pages/Cart";
+import ProtectedRoute from "../components/ProtectedRoute";
+import AdminDashboard from "../pages/AdminDashboard";
 
 const router = createBrowserRouter([
    { path:"/",
@@ -19,7 +24,22 @@ const router = createBrowserRouter([
             path: '/products/:productId',
             element: <ProductDetail/>
         },
-
+        {
+            path:'/register',
+            element: <Register/>
+        },
+        {
+            path:'/login',
+            element: <Login/>
+        },
+        {
+            path:'/cart',
+            element: <ProtectedRoute element={<Cart/>}/>
+        },
+        {
+            path:'/admin/dashboard',
+            element: <ProtectedRoute element={<AdminDashboard/>}/>
+        }
     ]},
     {
         path:"*",

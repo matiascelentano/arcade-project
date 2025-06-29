@@ -13,9 +13,9 @@ const Footer = () => {
         </div>
         <div id='lowerFooter'>
             <ul>
-                <li>Terminos y Condiciones</li>
-                <li>Licencias</li>
-                <li>Soporte</li>
+                <li><p>Terminos y Condiciones</p></li>
+                <li><p>Licencias</p></li>
+                <li><p>Soporte</p></li>
             </ul>
             <p>Copyright<i className="fa-solid fa-copyright"></i></p>
             

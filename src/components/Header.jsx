@@ -1,18 +1,25 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
-export function Header(){
+export function Header() {
+    const  useAuth = useContext(AuthContext)
+    console.log(useAuth);
+    
     return (
         <header>
-            <nav className="navbar">
+            <nav>
                 <div id="upperNav">
-                    <div className="logoContainer">
-                        <img src="/game-controller.png" alt="test" />
-                    </div>
+                    <Link to='/'>
+                        <div className="logoContainer">
+                            <img src="/game-controller.png" alt="test" />
+                        </div>
+                    </Link>
                     <ul className="navList">
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/help'>Registrarse</Link></li>
-                        <li><Link to='/account'>Iniciar Sesión</Link></li>
+                        <li><Link to='/register'>Registrarse</Link></li>
+                        <li><Link to='/login'>Iniciar Sesión</Link></li>
                     </ul>
                     <div className="userIconContainer">
                         <img src="/user.jpg" alt="test" />
@@ -20,10 +27,43 @@ export function Header(){
                 </div>
                 <div id="lowerNav" >
                     <ul className="navList">
-                        <li><Link to="/categories">Categorias</Link></li>
-                        <li><Link to="/brands">Marcas</Link></li>
-                        <li><Link to="/products?category=arcade-stick">Arcade Sticks</Link></li>
-                        <li><Link to="/products?category=accesories">Accesorios</Link></li>
+                        <li className="dropdown">
+                            <Link to={'#'} className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Marcas
+                            </Link>
+
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">Marca 1</a></li>
+                                <li><a className="dropdown-item" href="#">Marca 2</a></li>
+                                <li><a className="dropdown-item" href="#">Marca 3</a></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown">
+                            <Link to={'#'} className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias
+                            </Link>
+
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">Categoria 1</a></li>
+                                <li><a className="dropdown-item" href="#">Categoria 2</a></li>
+                                <li><a className="dropdown-item" href="#">Categoria 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <Link to={'#'}>
+                                Arcade Sticks
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={'#'}>
+                                Leverless
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={'#'}>
+                                Accesorios
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
