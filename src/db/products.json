@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "name": "Arcade Stick 1",
+        "precio": 199999
+    },
+    {
+        "id": 2,
+        "name": "Arcade Stick 2",
+        "precio": 177999
+    },
+    {
+        "id": 3,
+        "name": "Arcade Stick 4",
+        "precio": 450000
+    },
+    {
+        "id": 4,
+        "name": "Arcade Stick 4",
+        "precio": 234500
+    },
+    {
+        "id": 5,
+        "name": "Arcade Stick 5",
+        "precio": 243500
+    },
+    {
+        "id": 6,
+        "name": "Arcade Stick 6",
+        "precio": 62000
+    },
+    {
+        "id": 7,
+        "name": "Arcade Stick 7",
+        "precio": 345000
+    },
+    {
+        "id": 8,
+        "name": "Arcade Stick 8",
+        "precio": 170000
+    },
+    {
+        "id": 9,
+        "name": "Arcade Stick 9",
+        "precio": 230000
+    },
+    {
+        "id": 10,
+        "name": "Arcade Stick 10",
+        "precio": 150000
+    },
+    {
+        "id": 11,
+        "name": "Arcade Stick 11",
+        "precio": 300000
+    },
+    {
+        "id": 12,
+        "name": "Arcade Stick 12",
+        "precio": 239999
+    },
+    {
+        "id": 13,
+        "name": "Arcade Stick 13",
+        "precio": 345000
+    },
+    {
+        "id": 14,
+        "name": "Arcade Stick 14",
+        "precio": 500000
+    },
+    {
+        "id": 15,
+        "name": "Arcade Stick 15",
+        "precio": 43000
+    },
+    {
+        "id": 16,
+        "name": "Arcade Stick 16",
+        "precio": 76500
+    },
+    {
+        "id": 17,
+        "name": "Arcade Stick 17",
+        "precio": 130000
+    },
+    {
+        "id": 18,
+        "name": "Arcade Stick 18",
+        "precio": 250000
+    },
+    {
+        "id": 19,
+        "name": "Arcade Stick 19",
+        "precio": 100000
+    },
+    {
+        "id": 20,
+        "name": "Arcade Stick 20",
+        "precio": 120000
+    },
+    {
+        "id": 21,
+        "name": "Arcade Stick 21",
+        "precio": 134000
+    }
+]

@@ -1,17 +1,41 @@
+import { useAuth } from "../context/AuthContext"
+
+
+
 
 const Login = () => {
+  const { login } = useAuth();
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    const userEmail = e.target.email.value;
+    console.log(email);
+    
+    const pw = e.target.password.value;
+   
+    login(userEmail, pw)
+      .then(u =>{
+        console.log(u);
+      })
+      .catch(e => {
+        console.error(e);
+      })
+
+  }
+
+
   return (
-    <form action="#">
+    <form onSubmit={handleSubmit}>
       <h1>Inicio de Sesion</h1>
       <div className="mb-3">
-        <label htmlFor="username" className="form-label">Nombre de Usuario</label>
-        <input type="text" name="username" id="username" className="form-control" aria-describedby="usernameHelp"/>
-        <div id="usernameHelp" className="form-text">Ingrese su nombre de usuario</div>
+        <label htmlFor="email" className="form-label">Email</label>
+        <input type="email" name="email" id="email" className="form-control" aria-describedby="emailHelp"/>
+        <div id="emailHelp">Ingrese su email</div>
       </div>
         <div className="mb-3">
         <label htmlFor="password">Contraseña</label>
         <input type="password" name="password" id="password" className="form-control" aria-describedby="passwordHelp"/>
-        <div id="passwordHelp" className="form-text">Ingrese su contraseña</div>
+        <div id="passwordHelp">Ingrese su contraseña</div>
       </div>
       <button type="submit" className="btn btn-primary">Ingresar</button>
     </form>

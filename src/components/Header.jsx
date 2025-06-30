@@ -1,11 +1,26 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import AuthContext from "../context/AuthContext";
+import { useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export function Header() {
-    const  useAuth = useContext(AuthContext)
-    console.log(useAuth);
+    const {user} = useAuth();
+    
+    const userIcon = () =>{
+        if(user == null){
+            return (
+              <div className="userIconContainer">
+                <img src="/default-user.png" alt="test" />
+              </div>
+            );
+        }else{
+            return (
+                <div className="userIconContainer">
+                    <img src={`/${user.userImg}`} alt="test" />
+                </div>
+            );
+        }
+    }
     
     return (
         <header>
@@ -21,9 +36,9 @@ export function Header() {
                         <li><Link to='/register'>Registrarse</Link></li>
                         <li><Link to='/login'>Iniciar Sesión</Link></li>
                     </ul>
-                    <div className="userIconContainer">
-                        <img src="/user.jpg" alt="test" />
-                    </div>
+                    {
+                        userIcon()
+                    }
                 </div>
                 <div id="lowerNav" >
                     <ul className="navList">
