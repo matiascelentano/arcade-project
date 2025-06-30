@@ -4,24 +4,38 @@ import { useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 
 export function Header() {
-    const {user} = useAuth();
-    
-    const userIcon = () =>{
-        if(user == null){
+    const { user } = useAuth();
+
+    const userNavLinks = () => {
+        if (user !== null && user.role === 0) {
             return (
-              <div className="userIconContainer">
-                <img src="/default-user.png" alt="test" />
-              </div>
-            );
-        }else{
+                <>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/admin/dashboard'>Dashboard</Link></li>
+                    <li><Link to='/account'>Mi cuenta</Link></li>
+                    <li><Link to='/cart'>Mi Carrito</Link></li>
+                </>
+            )
+        } else if (user !== null) {
             return (
-                <div className="userIconContainer">
-                    <img src={`/${user.userImg}`} alt="test" />
-                </div>
-            );
+                <>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/account'>Mi cuenta</Link></li>
+                    <li><Link to='/cart'>Mi Carrito</Link></li>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/register'>Registrarse</Link></li>
+                    <li><Link to='/login'>Iniciar Sesion</Link></li>
+                </>
+            )
         }
+
     }
-    
+
     return (
         <header>
             <nav>
@@ -32,12 +46,14 @@ export function Header() {
                         </div>
                     </Link>
                     <ul className="navList">
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/register'>Registrarse</Link></li>
-                        <li><Link to='/login'>Iniciar Sesión</Link></li>
+                        {
+                            userNavLinks()
+                        }
                     </ul>
                     {
-                        userIcon()
+                        <div className="userIconContainer">
+                            <img src={user ? `/${user.userImg}` : "/default-user.png"} alt="test" />
+                        </div>
                     }
                 </div>
                 <div id="lowerNav" >

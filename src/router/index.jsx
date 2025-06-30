@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Cart from "../pages/Cart";
 import ProtectedRoute from "../components/ProtectedRoute";
 import AdminDashboard from "../pages/AdminDashboard";
+import AdminRoute from "../components/AdminRoute";
 
 const router = createBrowserRouter([
    { path:"/",
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/admin/dashboard',
-            element: <ProtectedRoute element={<AdminDashboard/>}/>
+            element: <AdminRoute element={<AdminDashboard/>}/>
         }
     ]},
     {

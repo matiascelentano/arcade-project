@@ -32,8 +32,24 @@ export const AuthProvider = ({ elements }) => {
     setUser(null)
   }
 
+  const isAuthenticated = () =>{
+    if(user !== null){
+      return true
+    }else{
+      return false
+    }
+  }
+
+  const isAdmin = () =>{
+    if (user !== null && user.role == 0) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, isAuthenticated, isAdmin }}>
       {elements}
     </AuthContext.Provider>
   );

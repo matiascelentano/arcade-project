@@ -1,10 +1,10 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-export const ProtectedRoute = ({element}) => {
-  const { isAuthenticated } = useAuth();
-  const validation = isAuthenticated();
+export const AdminRoute = ({element}) => {
+  const { isAdmin } = useAuth();
+  const validation = isAdmin();
   return validation ? element : <Navigate to="/" />
 }
 
-export default ProtectedRoute
+export default AdminRoute
