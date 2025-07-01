@@ -10,10 +10,10 @@ nav{
     align-items: center;
 }
 .dropdown-menu, #upperNav{
-    background-color: #E586A1;
+    background-color: #6F55CE;
 }
 .dropdown-item:hover{
-    background-color: #202020;
+    background-color: #252525;
 }
 #upperNav, #lowerNav{
     display: flex;
@@ -54,7 +54,7 @@ nav{
     color: #ffffff;
 }
 #lowerNav ul li a:hover{
-    color: #E586A1;
+    color: #6F55CE;
 }
 
 .navList{

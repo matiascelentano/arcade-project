@@ -1,6 +1,37 @@
 #upperFooter{
     background-color: #252525;
+
 }
+#upperFooter ul{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
 #lowerFooter{
-    background-color: #E586A1;
+    background-color: #6F55CE;
+}
+#lowerFooterLinkContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#lowerFooterLinkContainer ul{
+    margin: 5px 50px;
+}
+.footerSocialLinks{
+    font-size: 40px;
+    margin: 5px 10px;
+    transition: scale .2s ease-in;
+}
+.footerSocialLinks:hover{
+    scale: 110%;
+    color: #6F55CE;
+}
+.lowerFooterBottomText{
+    margin: 0 10px;
+    text-align: right;
 }

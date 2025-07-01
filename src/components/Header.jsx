@@ -1,11 +1,12 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from "../context/CartContext";
 
 export function Header() {
     const { user } = useAuth();
-
+    const {countItems, clearCart } = useCart();
+   
     const userNavLinks = () => {
         if (user !== null && user.role === 0) {
             return (
@@ -30,6 +31,13 @@ export function Header() {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/register'>Registrarse</Link></li>
                     <li><Link to='/login'>Iniciar Sesion</Link></li>
+                    <li>
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        <div>{countItems()}</div>
+                    </li>
+                    <button onClick={()=>{
+                        clearCart()
+                    }}>Limpiar Carrito</button>
                 </>
             )
         }

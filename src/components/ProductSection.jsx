@@ -1,10 +1,12 @@
-import React from 'react'
 import './ProductSection.css'
 import { Link } from 'react-router-dom';
 import { useProducts } from '../context/ProductsContext';
+import { CartContext, useCart } from '../context/CartContext'
+import { useContext } from 'react';
 
 const ProductSection = () => {
     const { products } = useProducts();
+    const { addToCart } = useCart();
     let startIndex = 0;
     let endIndex = 5;
 
@@ -20,6 +22,13 @@ const ProductSection = () => {
                         </figure>
                         <h3 className='productName'>{product.nombre}</h3>
                         <p className='productPrice'>${product.precio}</p>
+                        <button onClick={(e) => { 
+                            e.preventDefault();
+                            addToCart(product);
+                        }}
+                        >
+                            Agregar Producto
+                        </button>
                     </Link>
                 </div>
             )
