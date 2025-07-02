@@ -34,7 +34,7 @@ nav{
 #upperNav ul{
     max-width: 600px;
 }
-#upperNav ul li a, #lowerNav ul li a{
+#upperNav ul li a, #lowerNav ul li a, #upperNav ul li button{
     transition: all .25s ease-in;
 }
 #upperNav ul li a{
@@ -56,13 +56,23 @@ nav{
 #lowerNav ul li a:hover{
     color: #6F55CE;
 }
-
+#cartButtonContainer{
+    position: relative;
+}
+#cartButtonContainer p{
+    position: absolute;
+    top: -15px;
+    right: -10px;
+}
+#cartIcon{
+    font-size: 32px;
+}
 .navList{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.navList li{
+.navList li, .navList li p{
     font-family: 'VaporPixel Origin';
     margin: auto 0px;
 }

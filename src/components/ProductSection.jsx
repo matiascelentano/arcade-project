@@ -7,13 +7,11 @@ import { useContext } from 'react';
 const ProductSection = () => {
     const { products } = useProducts();
     const { addToCart } = useCart();
-    let startIndex = 0;
-    let endIndex = 5;
 
-    const itemCarousel = () => {
-        const items = products.slice(startIndex, endIndex).map(product => {
+    const productItem = () => {
+        return products.map((product) => {
             return (
-                <div className='productSectionCarouselItem' key={product.id}>
+                <div className='bg-black border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 overflow-hidden w-96'>
                     <Link to={{
                         pathname: `/products/${product.id}`
                     }}>
@@ -22,7 +20,7 @@ const ProductSection = () => {
                         </figure>
                         <h3 className='productName'>{product.nombre}</h3>
                         <p className='productPrice'>${product.precio}</p>
-                        <button onClick={(e) => { 
+                        <button onClick={(e) => {
                             e.preventDefault();
                             addToCart(product);
                         }}
@@ -33,50 +31,21 @@ const ProductSection = () => {
                 </div>
             )
         })
-
-        startIndex = startIndex + 5;
-        endIndex = endIndex + 5;
-        return items;
     }
 
     return (
         <section className='w-75 mx-auto'>
             <h2>Productos Destacados</h2>
-            <div id='productSectionCarousel'>
-                {/* {listar} */}
-                <div id="carouselProduct" className="carousel slide d-flex">
-                    <button className="carousel-control-prev position-relative" type="button" data-bs-target="#carouselProduct" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <div className='d-flex'>
-                                {
-                                    itemCarousel()
-                                }
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className='d-flex'>
-                                {
-                                    itemCarousel()
-                                }
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className='d-flex'>
-                                {
-                                    itemCarousel()
-                                }
-                            </div>
-                        </div>
-                    </div>
-
-                    <button className="carousel-control-next position-relative" type="button" data-bs-target="#carouselProduct" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
+            <div id='productSectionCarousel' className='class="flex overflow-x-scroll pb-10 [&::-webkit-scrollbar]:h-2
+                [&::-webkit-scrollbar-track]:rounded-full
+                [&::-webkit-scrollbar-track]:bg-gray-100
+                [&::-webkit-scrollbar-thumb]:rounded-full
+                [&::-webkit-scrollbar-thumb]:bg-gray-300
+                dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+                dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500
+                mx-5 my-9"'>
+                <div className='d-flex flex-nowrap'>
+                    {productItem()}
                 </div>
             </div>
         </section>

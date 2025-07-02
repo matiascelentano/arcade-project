@@ -5,8 +5,8 @@ import { useCart } from "../context/CartContext";
 
 export function Header() {
     const { user } = useAuth();
-    const {countItems, clearCart } = useCart();
-   
+    const { countItems, clearCart } = useCart();
+
     const userNavLinks = () => {
         if (user !== null && user.role === 0) {
             return (
@@ -32,12 +32,11 @@ export function Header() {
                     <li><Link to='/register'>Registrarse</Link></li>
                     <li><Link to='/login'>Iniciar Sesion</Link></li>
                     <li>
-                        <i className="fa-solid fa-cart-shopping"></i>
-                        <div>{countItems()}</div>
+                        <div id="cartButtonContainer">
+                            <button className="btn"><i className="fa-solid fa-cart-shopping" id="cartIcon"></i></button>
+                            <p>{countItems() > 0 ? `(${countItems()})` : ""}</p>
+                        </div>
                     </li>
-                    <button onClick={()=>{
-                        clearCart()
-                    }}>Limpiar Carrito</button>
                 </>
             )
         }
@@ -103,6 +102,9 @@ export function Header() {
                                 Accesorios
                             </Link>
                         </li>
+                        <button onClick={() => {
+                            clearCart()
+                        }}>Limpiar Carrito</button>
                     </ul>
                 </div>
             </nav>
