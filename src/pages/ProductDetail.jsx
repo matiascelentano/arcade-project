@@ -1,9 +1,91 @@
+import { useCart } from '../context/CartContext';
 import { useProducts } from '../context/ProductsContext';
+import { useParams, Link } from 'react-router-dom';
+import './ProductDetail.css';
+import { useState } from 'react';
 
 const ProductDetail = () => {
+  const { addToCart, removeFromCart, addMultipleToCart, findItemCart } = useCart();
+  const { products } = useProducts();
+  const { productId } = useParams();
 
-  return (
-    <div>ProductDetail</div>
+  const product = products.find(({ id }) => id === Number(productId));
+  const itemCart = findItemCart(product)
+  const [value, setValue] = itemCart ? useState(itemCart.quantity) : useState(0);
+  const valNum = Number(value);
+
+  const handleChangeInput = (e) => {
+    setValue(e.target.value)
+    addMultipleToCart(product, e.target.value)
+    console.log("target ", e.target.value);
+  }
+  const handleClickButtonAdd = () => {
+    setValue(valNum + 1)
+    addMultipleToCart(product, valNum + 1)
+  }
+  const handleClickButtonRemove = () => {
+    if (valNum - 1 >= 0) {
+      setValue(valNum - 1)
+      addMultipleToCart(product, valNum - 1)
+    }
+  }
+  return product !== undefined ? (
+    <div>
+      <div>
+        <div id="carouselProductImg" className="carousel slide" data-bs-theme="dark" data-bs-touch="true">
+          <div className="carousel-indicators">
+            <button type="button" data-bs-target="#carouselProductImg" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselProductImg" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselProductImg" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src={`/${product.img}`} className="figure-img img-fluid rounded" alt="..." />
+            </div>
+            <div className="carousel-item">
+              <img src={`/${product.img}`} className="figure-img img-fluid rounded" alt="..." />
+            </div>
+            <div className="carousel-item">
+              <img src={`/${product.img}`} className="figure-img img-fluid rounded" alt="..." />
+            </div>
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselProductImg" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselProductImg" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <h2>{product.name}</h2>
+        <p>${product.price}</p>
+        <p>Id:{product.id}</p>
+        <div className='d-flex flex-row flew-wrap'>
+          <button onClick={() => handleClickButtonRemove()}>
+            <i className="fa-solid fa-minus"></i>
+          </button>
+          <label>
+            <input
+              value={value}
+              onChange={e => handleChangeInput(e)}
+              type="number"
+            />
+            <button onClick={() => handleClickButtonAdd()}>
+              <i className="fa-solid fa-plus"></i>
+            </button>
+          </label>
+        </div>
+        <button>Comprar</button>
+      </div>
+    </div>
+  ) : (
+    <div>
+      <h1>Producto no encontrado</h1>
+      <p>El producto con el id {product} no existe.</p>
+      <Link to="/">Volver a Home</Link>
+    </div>
   )
 }
 

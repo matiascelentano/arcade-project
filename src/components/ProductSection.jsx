@@ -11,15 +11,15 @@ const ProductSection = () => {
     const productItem = () => {
         return products.map((product) => {
             return (
-                <div className='bg-black border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 overflow-hidden w-96'>
+                <div className='bg-black border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-2 overflow-hidden w-96' key={product.id}>
                     <Link to={{
                         pathname: `/products/${product.id}`
                     }}>
                         <figure className='productImgContainer'>
                             <img src={`/${product.img}`} alt="Imagen Producto" className='productImg' />
                         </figure>
-                        <h3 className='productName'>{product.nombre}</h3>
-                        <p className='productPrice'>${product.precio}</p>
+                        <h3 className='productName'>{product.name}</h3>
+                        <p className='productPrice'>${product.price}</p>
                         <button onClick={(e) => {
                             e.preventDefault();
                             addToCart(product);
