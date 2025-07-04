@@ -16,7 +16,7 @@ const CategorySection = () => {
             </div>
             <div className="categoryContainer">
                 <figure>
-                    <img src="./arcade-stick.jpg" alt="" className="categoryImg" />
+                    <img src="gl-lever.jpg" alt="" className="categoryImg" />
                 </figure>
                 <div className="categoryContainerText">
                     <h5 className="">Productos</h5>
@@ -26,7 +26,7 @@ const CategorySection = () => {
             </div>
             <div className="categoryContainer">
                 <figure>
-                    <img src="./arcade-stick.jpg" alt="" className="categoryImg" />
+                    <img src="./sanwa-buttons.jpg" alt="" className="categoryImg" />
                 </figure>
                 <div className="categoryContainerText">
                     <h5 className="">Productos</h5>
@@ -36,7 +36,7 @@ const CategorySection = () => {
             </div>
             <div className="categoryContainer">
                 <figure>
-                    <img src="./arcade-stick.jpg" alt="" className="categoryImg" />
+                    <img src="./victrix-pro-ko.png" alt="" className="categoryImg" />
                 </figure>
                 <div className="categoryContainerText">
                     <h5 className="">Productos</h5>

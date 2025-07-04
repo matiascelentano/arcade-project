@@ -94,9 +94,6 @@ export function Header() {
                                 Accesorios
                             </Link>
                         </li>
-                        <button onClick={() => {
-                            clearCart()
-                        }}>Limpiar Carrito</button>
                     </ul>
                 </div>
             </nav>

@@ -38,7 +38,7 @@ const ProductSection = () => {
     }
 
     return (
-        <section className='w-75 mx-auto'>
+        <section className='mx-auto' id='productSection'>
             <h2>Productos Destacados</h2>
             <div id='productSectionCarouselContainer' className="">
                 <div className='[&::-webkit-scrollbar]:h-2

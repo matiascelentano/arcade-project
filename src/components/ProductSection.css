@@ -1,3 +1,6 @@
+#productSection{
+    max-width: 1300px;
+}
 #productSectionCarousel {
     display: flex;
     flex-direction: column;
