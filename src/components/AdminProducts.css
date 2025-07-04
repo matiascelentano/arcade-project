@@ -1,0 +1,6 @@
+.productName{
+    max-width: 200px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}

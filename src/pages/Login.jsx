@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext"
 import { useNavigate } from "react-router-dom";
-
-
+import "./Login.css"
 
 const Login = () => {
   const { login } = useAuth();
@@ -26,25 +25,26 @@ const Login = () => {
 
   }
 
-
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h1>Inicio de Sesion</h1>
+      <form onSubmit={handleSubmit} id="loginForm">
+        <h1 className="mainText">Inicio de Sesion</h1>
         {
           error && <p className="text-danger">{error}</p>
         }
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email</label>
+          <label htmlFor="email" className="form-label mainText">Email</label>
           <input type="email" name="email" id="email" className="form-control" aria-describedby="emailHelp" />
-          <div id="emailHelp">Ingrese su email</div>
+          <div id="emailHelp" className="mainText">Ingrese su email</div>
         </div>
         <div className="mb-3">
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password" className="mainText">Contraseña</label>
           <input type="password" name="password" id="password" className="form-control" aria-describedby="passwordHelp" />
-          <div id="passwordHelp">Ingrese su contraseña</div>
+          <div id="passwordHelp" className="mainText">Ingrese su contraseña</div>
         </div>
-        <button type="submit" className="btn btn-primary">Ingresar</button>
+        <div id="loginButtonContainer">
+          <button type="submit" className="mainButton mx-auto">Ingresar</button>
+        </div>
       </form>
     </>
   )

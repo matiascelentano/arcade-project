@@ -1,0 +1,19 @@
+#loginForm {
+    background-color: #e2e2e2;
+    width: 100%;
+    padding: 20px;
+    flex-grow: 1;
+}
+#loginButtonContainer{
+    width: fit-content;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    #loginForm {
+        border-radius: 5px;
+        max-width: 450px;
+        margin: 20px auto;
+        max-height: 500px;
+    }
+}

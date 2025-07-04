@@ -24,7 +24,9 @@ main {
   color: #6F55CE;
   background-color: #000000;
 }
-
+.backgroundGrey{
+  background-color: #e2e2e2;
+}
 .secondaryButton:hover {
   color: #ffff;
 }

@@ -1,7 +1,9 @@
 import { useProducts } from "../context/ProductsContext";
+import "./AdminProducts.css"
 
 const AdminProducts = () => {
-    const { products } = useProducts();
+    const { products, deleteProduct } = useProducts();
+
 
     const populateTable = () => {
         return products.map((product) => {
@@ -10,7 +12,7 @@ const AdminProducts = () => {
                     <td>
                         {product.id}
                     </td>
-                    <td>
+                    <td className="productName">
                         {product.name}
                     </td>
                     <td>
@@ -18,6 +20,15 @@ const AdminProducts = () => {
                     </td>
                     <td>
                         {product.quantity}
+                    </td>
+                    <td>
+                        <button className="btn btn-danger" onClick={(e) =>{
+                            e.preventDefault();
+                            e.stopPropagation();
+                            deleteProduct(product.id);
+                        }}>
+                            <i className="fa-solid fa-minus"></i>
+                        </button>
                     </td>
                 </tr>
             )
@@ -32,6 +43,7 @@ const AdminProducts = () => {
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
+                    <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody>

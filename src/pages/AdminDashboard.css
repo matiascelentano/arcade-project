@@ -1,4 +1,21 @@
-
+#dashboardSidebar{
+    border-right: 2px solid rgb(114, 114, 114);
+}
 .dashboardTable{
     height: fit-content;
+}
+.sideBarLink{
+    padding: 10px;
+}
+.sideBarLink button{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-align: center;
+    width: 100%;
+    background: none;
+}
+.navSticky{
+    position: sticky;
+    top: 100px;
 }

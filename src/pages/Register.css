@@ -1,3 +1,18 @@
-#logoRegister{
+#logoRegister {
     width: 200px;
+    margin: 5px auto;
+}
+
+#registerForm {
+    background-color: #e2e2e2;
+    width: 100%;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    #registerForm {
+        border-radius: 5px;
+        max-width: 450px;
+        margin: 20px auto;
+    }
 }
