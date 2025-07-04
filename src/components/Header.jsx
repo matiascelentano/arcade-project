@@ -14,7 +14,6 @@ export function Header() {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/admin/dashboard'>Dashboard</Link></li>
                     <li><Link to='/account'>Mi cuenta</Link></li>
-                    <li><Link to='/cart'>Mi Carrito</Link></li>
                 </>
             )
         } else if (user !== null) {
@@ -22,7 +21,6 @@ export function Header() {
                 <>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/account'>Mi cuenta</Link></li>
-                    <li><Link to='/cart'>Mi Carrito</Link></li>
                 </>
             )
         } else {
@@ -31,12 +29,6 @@ export function Header() {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/register'>Registrarse</Link></li>
                     <li><Link to='/login'>Iniciar Sesion</Link></li>
-                    <li>
-                        <div id="cartButtonContainer">
-                            <button className="btn"><i className="fa-solid fa-cart-shopping" id="cartIcon"></i></button>
-                            <p>{countItems() > 0 ? `(${countItems()})` : ""}</p>
-                        </div>
-                    </li>
                 </>
             )
         }
@@ -56,6 +48,12 @@ export function Header() {
                         {
                             userNavLinks()
                         }
+                        <li>
+                            <div id="cartButtonContainer">
+                                <button className="btn"><i className="fa-solid fa-cart-shopping" id="cartIcon"></i></button>
+                                <p>{countItems() > 0 ? `(${countItems()})` : ""}</p>
+                            </div>
+                        </li>
                     </ul>
                     {
                         <div className="userIconContainer">
@@ -66,15 +64,9 @@ export function Header() {
                 <div id="lowerNav" >
                     <ul className="navList">
                         <li className="dropdown">
-                            <Link to={'#'} className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Marcas
+                            <Link to={'/products'}>
+                                Productos
                             </Link>
-
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Marca 1</a></li>
-                                <li><a className="dropdown-item" href="#">Marca 2</a></li>
-                                <li><a className="dropdown-item" href="#">Marca 3</a></li>
-                            </ul>
                         </li>
                         <li className="dropdown">
                             <Link to={'#'} className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

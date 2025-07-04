@@ -1,0 +1,23 @@
+#categorySection{
+    max-width: 650px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.categoryContainer{
+    max-width: 300px;
+    position: relative;
+    margin: 5px;
+}
+.categoryImg{
+    display: block;
+    width: 100%;
+    opacity:0.6;
+    border-radius: 5px;
+}
+.categoryContainerText{
+    position: absolute;
+    top: 45%;
+    text-align: center;
+}

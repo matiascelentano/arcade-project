@@ -5,7 +5,7 @@ import './ProductDetail.css';
 import { useState } from 'react';
 
 const ProductDetail = () => {
-  const { addToCart, removeFromCart, addMultipleToCart, findItemCart } = useCart();
+  const { addMultipleToCart, findItemCart } = useCart();
   const { products } = useProducts();
   const { productId } = useParams();
 
@@ -30,8 +30,8 @@ const ProductDetail = () => {
     }
   }
   return product !== undefined ? (
-    <div>
-      <div>
+    <div className='contentContainer'>
+      <div className='d-flex productCard'>
         <div id="carouselProductImg" className="carousel slide" data-bs-theme="dark" data-bs-touch="true">
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselProductImg" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -58,26 +58,28 @@ const ProductDetail = () => {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-
-        <h2>{product.name}</h2>
-        <p>${product.price}</p>
-        <p>Id:{product.id}</p>
-        <div className='d-flex flex-row flew-wrap'>
-          <button onClick={() => handleClickButtonRemove()}>
-            <i className="fa-solid fa-minus"></i>
-          </button>
-          <label>
-            <input
-              value={value}
-              onChange={e => handleChangeInput(e)}
-              type="number"
-            />
+        <div id='productInfo'>
+          <h2>{product.name}</h2>
+          <p>${product.price}</p>
+          <p>Id:{product.id}</p>
+          <div className='d-flex flex-row flew-wrap'>
+            <button onClick={() => handleClickButtonRemove()}>
+              <i className="fa-solid fa-minus"></i>
+            </button>
+            <label>
+              <input
+                id='cartInput'
+                value={value}
+                onChange={e => handleChangeInput(e)}
+                type="number"
+              />
+            </label>
             <button onClick={() => handleClickButtonAdd()}>
               <i className="fa-solid fa-plus"></i>
             </button>
-          </label>
+          </div>
+          <button>Comprar</button>
         </div>
-        <button>Comprar</button>
       </div>
     </div>
   ) : (

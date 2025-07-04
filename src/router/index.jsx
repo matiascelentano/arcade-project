@@ -10,6 +10,7 @@ import AdminDashboard from "../pages/AdminDashboard";
 import AdminRoute from "../components/AdminRoute";
 import AdminProducts from "../components/AdminProducts";
 import AdminUsers from "../components/AdminUsers";
+import Products from "../pages/Products";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/products',
-                element: <h1>Productos</h1>
+                element: <Products/>
             },
             {
                 path: '/products/:productId',
