@@ -50,7 +50,7 @@ export function Header() {
                         }
                         <li>
                             <div id="cartButtonContainer">
-                                <button className="btn"><i className="fa-solid fa-cart-shopping" id="cartIcon"></i></button>
+                                <button className="btn" data-bs-toggle="modal" data-bs-target="#cartModal"><i className="fa-solid fa-cart-shopping" id="cartIcon"></i></button>
                                 <p>{countItems() > 0 ? `(${countItems()})` : ""}</p>
                             </div>
                         </li>
@@ -100,6 +100,7 @@ export function Header() {
                     </ul>
                 </div>
             </nav>
+            
         </header>
     )
 }

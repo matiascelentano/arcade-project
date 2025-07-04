@@ -1,8 +1,7 @@
 import './ProductSection.css'
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useProducts } from '../context/ProductsContext';
-import { CartContext, useCart } from '../context/CartContext'
-import { useContext } from 'react';
+import { useCart } from '../context/CartContext'
 
 const ProductSection = () => {
     const { products } = useProducts();

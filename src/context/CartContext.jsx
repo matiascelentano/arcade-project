@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
     }, []);
 
     const findItemCart = (item) => {
-        return cartItems.find((cartItem) => cartItem.id === item.id);
+        return cartItems.find((cartItem) => cartItem.id === Number(item.id));
     }
     const addToCart = (item) => {
         const findItem = findItemCart(item);
@@ -29,9 +29,7 @@ export const CartProvider = ({ children }) => {
         if (findItem) {
             setCartItems(
                 cartItems.map((cartItem) =>
-                    cartItem.id === item.id
-                        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-                        : cartItem
+                    cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
                 )
             );
             console.log("Producto sumado");
@@ -44,15 +42,15 @@ export const CartProvider = ({ children }) => {
 
     const removeFromCart = (item) => {
         const findItem = findItemCart(item);
-
-        if (findItem && findItem.quantity === 1) {
+        console.log(findItem);
+        
+        const itemQuantity = Number(findItem.quantity);
+        if (findItem && itemQuantity === 1) {
             setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
         } else {
             setCartItems(
                 cartItems.map((cartItem) =>
-                    cartItem.id === item.id
-                        ? { ...cartItem, quantity: cartItem.quantity - 1 }
-                        : cartItem
+                    cartItem.id === item.id ? { ...cartItem, quantity: itemQuantity - 1 } : cartItem
                 )
             );
         }
@@ -96,9 +94,7 @@ export const CartProvider = ({ children }) => {
             items += Number(e.quantity)
         });
 
-        if (items > 0) {
-            return items
-        }
+        return items
     }
 
 
