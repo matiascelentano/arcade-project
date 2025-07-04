@@ -1,23 +1,43 @@
 #productSectionCarousel {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    height: fit-content;
+    flex-direction: column;
     margin: auto;
 }
 
-.productSectionCarouselItem {
-    margin: 0px 10px;
+#productAddToCart {
+    padding: 10px;
+    margin: 5px;
+    font-size: 35px;
+    line-height: normal;
+}
+
+#productRedirect {
+    margin: 5px;
+}
+
+#productRedirect button {
+    height: 100%;
+}
+
+/* #productRedirect, #productRedirect a{
+    transition: all .3s ease-in-out;
+}
+#productRedirect:hover, #productRedirect a:hover {
+    color: #6F55CE;
+    background-color: #000;
+} */
+
+.productSectionItem {
+    width: 100%;
+    max-width: 400px;
+    margin: 5px auto;
     padding: 15px;
     border-radius: 5px;
-    background-color: #b6b6b655;
+    background-color: #e2e2e2;
 }
 
 .productName {
     text-wrap: nowrap;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
 }
 
 .productImgContainer {
@@ -26,4 +46,42 @@
 
 .productImg {
     width: 100%;
+}
+
+.productSectionItem h5,
+.productSectionItem h4 {
+    color: #000;
+    margin-left: 20px;
+}
+
+.productSectionButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+@media (min-width: 768px) {
+    #productSectionCarouselContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        height: fit-content;
+        margin: auto;
+    }
+
+    #productSectionCarousel {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0;
+    }
+
+    .productSectionItem {
+        width: 250px;
+        margin: 5px 10px;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #e2e2e2;
+    }
 }

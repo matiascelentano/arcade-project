@@ -21,3 +21,9 @@
     top: 45%;
     text-align: center;
 }
+
+@media (min-width: 1200px) {
+    #categorySection{
+        max-width: fit-content;
+    }
+}

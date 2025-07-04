@@ -80,7 +80,7 @@ export function Header() {
                             </ul>
                         </li>
                         <li>
-                            <Link to={'#'}>
+                            <Link to={'/products?category=1'}>
                                 Arcade Sticks
                             </Link>
                         </li>

@@ -58,12 +58,12 @@ const ProductDetail = () => {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-        <div id='productInfo'>
-          <h2>{product.name}</h2>
-          <p>${product.price}</p>
-          <p>Id:{product.id}</p>
-          <div className='d-flex flex-row flew-wrap'>
-            <button onClick={() => handleClickButtonRemove()}>
+        <div id='productInfo' className='overflow-hidden'>
+          <h2 className='mainText ellipsis'>{product.name}</h2>
+          <p className='mainText'>${product.price}</p>
+          <p className='mainText'>Id:{product.id}</p>
+          <div className='d-flex flex-row flew-wrap my-4'>
+            <button className='secondaryButton' onClick={() => handleClickButtonRemove()}>
               <i className="fa-solid fa-minus"></i>
             </button>
             <label>
@@ -74,11 +74,11 @@ const ProductDetail = () => {
                 type="number"
               />
             </label>
-            <button onClick={() => handleClickButtonAdd()}>
+            <button className='secondaryButton' onClick={() => handleClickButtonAdd()}>
               <i className="fa-solid fa-plus"></i>
             </button>
           </div>
-          <button>Comprar</button>
+          <button className='my-4 mainButton'>Comprar</button>
         </div>
       </div>
     </div>

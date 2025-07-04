@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { useProducts } from "../context/ProductsContext";
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import { Link } from "react-router-dom";
 const Products = () => {
   const { products } = useProducts();
   const { addToCart } = useCart();
+
   const productItem = () => {
     return products.map((product) => {
       return (
