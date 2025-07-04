@@ -19,14 +19,6 @@
     height: 100%;
 }
 
-/* #productRedirect, #productRedirect a{
-    transition: all .3s ease-in-out;
-}
-#productRedirect:hover, #productRedirect a:hover {
-    color: #6F55CE;
-    background-color: #000;
-} */
-
 .productSectionItem {
     width: 100%;
     max-width: 400px;
@@ -41,7 +33,9 @@
 }
 
 .productImgContainer {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .productImg {
@@ -83,5 +77,8 @@
         padding: 15px;
         border-radius: 5px;
         background-color: #e2e2e2;
+    }
+    .productImgContainer {
+        height: 300px;
     }
 }

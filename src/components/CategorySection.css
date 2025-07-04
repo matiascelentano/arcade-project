@@ -21,6 +21,10 @@
     top: 45%;
     text-align: center;
 }
+.categoryContainerText a{
+    padding: 10px;
+    border-radius: 5px;
+}
 
 @media (min-width: 1200px) {
     #categorySection{

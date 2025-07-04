@@ -12,7 +12,7 @@ const ProductSection = () => {
             return (
                 <div className='overflow-hidden productSectionItem' key={product.id}>
                     <figure className='productImgContainer'>
-                        <img src={`/${product.img}`} alt="Imagen Producto" className='productImg' />
+                        <img src={`/${product.img}`} alt="Imagen Producto" className='productImg img-fluid' />
                     </figure>
                     <h5 className='productName ellipsis'>{product.name}</h5>
                     <h4 className='productPrice ellipsis'>${product.price}</h4>

@@ -11,7 +11,7 @@ const CategorySection = () => {
                 <div className="categoryContainerText">
                     <h5 className="">Productos</h5>
                     <p className="">Vea todos los productos que tenemos para ofrecer</p>
-                    <Link to={"/products"}>Todos los productos</Link>
+                    <Link to={"/products"} className="mainButton">Todos los productos</Link>
                 </div>
             </div>
             <div className="categoryContainer">
@@ -21,7 +21,7 @@ const CategorySection = () => {
                 <div className="categoryContainerText">
                     <h5 className="">Productos</h5>
                     <p className="">Vea todos los productos que tenemos para ofrecer</p>
-                    <Link to={"/products"}>Todos los productos</Link>
+                    <Link to={"/products"} className="mainButton">Todos los productos</Link>
                 </div>
             </div>
             <div className="categoryContainer">
@@ -31,7 +31,7 @@ const CategorySection = () => {
                 <div className="categoryContainerText">
                     <h5 className="">Productos</h5>
                     <p className="">Vea todos los productos que tenemos para ofrecer</p>
-                    <Link to={"/products"}>Todos los productos</Link>
+                    <Link to={"/products"} className="mainButton">Todos los productos</Link>
                 </div>
             </div>
             <div className="categoryContainer">
@@ -41,7 +41,7 @@ const CategorySection = () => {
                 <div className="categoryContainerText">
                     <h5 className="">Productos</h5>
                     <p className="">Vea todos los productos que tenemos para ofrecer</p>
-                    <Link to={"/products"}>Todos los productos</Link>
+                    <Link to={"/products"} className="mainButton">Todos los productos</Link>
                 </div>
             </div>
         </section>
